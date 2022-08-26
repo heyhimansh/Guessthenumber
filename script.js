@@ -58,7 +58,7 @@ function restartgame(){
     resetResultContent()
   }
 
-/// HINT PART 
+// HINT PART 
 function hintans(){
     let guessnum = document.getElementById("number-guess").value;
     // let hint1 =evenodd(correctNumber);
@@ -90,6 +90,7 @@ function evenodd(correctNumber){
         document.getElementById("result").innerHTML = dialog;
     }
 }
+
 function compaison(correctNumber){
     let text ;
     if(correctNumber>50){
