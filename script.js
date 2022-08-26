@@ -19,19 +19,30 @@
 // let guessnum = document.getElementById("number-guess").value;
 // console.log(guessnum.textContent);
 
+// load sounds 
+const winsound = new Audio("victory.mp3");
+
+
 
 // Variable to store the list of guesses 
-let guesses =[] ;
+let guesses  ;
 
 // Variable for store the correct random number
-let correctguessnum ;
+let correctNumber ;
+
+
+window.onload = function() {
+    restartgame()
+    document.getElementById("number-submit").addEventListener("click", playgame);
+    document.getElementById("restart-game").addEventListener("click", restartgame)
+}
 
 function playgame(){
     let guessnum = document.getElementById("number-guess").value;
     saveGuessnum(guessnum) ;
-    let randomnum = getrandomnumber();
+   
     displayHistory();
-    displayresult(guessnum , randomnum);
+    displayresult(guessnum);
 
 }
 
@@ -81,13 +92,13 @@ function displayHistory(){
     document.getElementById("history").innerHTML = list;
   }
 
-function displayresult(guessnum , randnum){
+function displayresult(guessnum ){
 
-    if(guessnum > randnum){
+    if(guessnum > correctNumber){
         showNumberAbove();
 
     }
-    else if(guessnum < randnum){
+    else if(guessnum < correctNumber){
         showNumberBelow();
     }
     else{
@@ -114,6 +125,7 @@ function showYouWon(){
     const text = "Awesome job, you got it!"
     let dialog = getDialog('won', text)
     document.getElementById("result").innerHTML = dialog;
+    winsound.play()
   }
 
   /// high num
@@ -121,6 +133,7 @@ function showNumberAbove(){
     const text = "Your guess is too high!"
     let dialog = getDialog('warning' , text);
     document.getElementById('result').innerHTML = dialog ;
+   
 }
 
 // low num 
