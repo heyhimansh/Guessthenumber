@@ -15,7 +15,7 @@
   <img align="left" alt="Himanshu's Spotify" width="22px" src="https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png" />
 </a>
 
-![](https://visitor-badge.glitch.me/badge?page_id=heyhimansh.gitcheatsheet)
+![](https://visitor-badge.glitch.me/badge?page_id=heyhimansh.Guessthenumber)
 
 <a target="_blank" href="https://heyhimansh.github.io/gitcheatsheet/"><b># Guessthenumber</b></a>
 
