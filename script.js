@@ -21,9 +21,6 @@
 
 // load sounds 
 const winsound = new Audio("victory.mp3");
-
-
-
 // Variable to store the list of guesses 
 let guesses  ;
 
