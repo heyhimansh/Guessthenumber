@@ -31,10 +31,14 @@ let guesses  ;
 let correctNumber ;
 
 
+
+
+
 window.onload = function() {
     restartgame()
     document.getElementById("number-submit").addEventListener("click", playgame);
-    document.getElementById("restart-game").addEventListener("click", restartgame)
+    document.getElementById("restart-game").addEventListener("click", restartgame);
+    document.getElementById("hint").addEventListener("click", hintans)
 }
 
 function playgame(){
@@ -54,6 +58,66 @@ function restartgame(){
     resetResultContent()
   }
 
+/// HINT PART 
+function hintans(){
+    let guessnum = document.getElementById("number-guess").value;
+    // let hint1 =evenodd(correctNumber);
+    // let hint2 =compaison(correctNumber);
+    randomhint()
+}
+
+function randomhint(){
+    let num =Math.floor(Math.random() *2);
+    if(num == 0){
+        evenodd(correctNumber);
+    }
+    else{
+        compaison(correctNumber);
+    }
+}
+
+function evenodd(correctNumber){
+    let text ;
+    if(correctNumber %2 == 0){
+        text = "Try Even Number : ) ";
+        let dialog = getDialog('hint', text)
+        document.getElementById("result").innerHTML = dialog;
+
+    }
+    else{
+        text = "Try Odd Number : ) ";
+        let dialog = getDialog('hint', text)
+        document.getElementById("result").innerHTML = dialog;
+    }
+}
+function compaison(correctNumber){
+    let text ;
+    if(correctNumber>50){
+        text = "Greater than 50";
+        let dialog = getDialog('hint', text)
+        document.getElementById("result").innerHTML = dialog;
+
+    }
+    else if(correctNumber < 50){
+        text = "Lesser than 50";
+        let dialog = getDialog('hint', text)
+        document.getElementById("result").innerHTML = dialog;
+    }
+    else{
+        text = "Correct Number 50";
+        let dialog = getDialog('hint', text)
+        document.getElementById("result").innerHTML = dialog;
+    }
+}
+
+
+
+// show hint dialog
+function showHintDialog(){
+    console.log(hint);
+}
+
+
 // Reset the results list display
 function resetResultContent(){
     document.getElementById("result").innerHTML = "";
@@ -65,6 +129,9 @@ function getrandomnumber(){
     let num =Math.floor(Math.random() *100);
     return num ;
 }
+
+
+
 
 // save guess which is shown to the save data under the buttons
 
@@ -114,7 +181,10 @@ function getDialog(type , text){
             break ;
         case 'warning':
             dialog = "<div class='alert alert-warning' role='alert'>"
-            break;       
+            break; 
+        case 'hint':
+            dialog = "<div class='alert alert-info' role='alert'>"
+            break;           
     }
     dialog += text;
     dialog += "</div>"
