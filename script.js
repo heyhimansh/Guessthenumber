@@ -191,9 +191,10 @@ function getDialog(type , text){
 // user won
 function showYouWon(){
     const text = "Awesome job, you got it!"
-    let dialog = getDialog('won', text)
+    let dialog = getDialog('won', text);
+    winsound.play();
     document.getElementById("result").innerHTML = dialog;
-    winsound.play()
+    
   }
 
   /// high num
