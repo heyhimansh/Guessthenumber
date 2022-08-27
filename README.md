@@ -17,5 +17,5 @@
 
 ![](https://visitor-badge.glitch.me/badge?page_id=heyhimansh.Guessthenumber)
 
-<a target="_blank" href="https://heyhimansh.github.io/gitcheatsheet/"><b># Guessthenumber</b></a>
+<a target="_blank" href="https://heyhimansh.github.io/Guessthenumber/"><b># Guessthenumber</b></a>
 
