@@ -7,8 +7,7 @@
 // let guessnum = document.getElementById("number-guess").value;
 // console.log(guessnum.textContent);
 
-// load sounds 
-const winsound = new Audio("victory.mp3");
+
 // Variable to store the list of guesses 
 let guesses  ;
 
@@ -180,7 +179,6 @@ function getDialog(type , text){
 function showYouWon(){
     const text = "Awesome job, you got it!"
     let dialog = getDialog('won', text);
-    winsound.play();
     document.getElementById("result").innerHTML = dialog;
     
   }
