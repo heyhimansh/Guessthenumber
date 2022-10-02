@@ -8,7 +8,7 @@
 // console.log(guessnum.textContent);
 
 // load sounds 
-const winsound = new Audio("victory.mp3");
+const winsound = new Audio("Victory.mp3");
 
 // Variable to store the list of guesses 
 let guesses  ;
